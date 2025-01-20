@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Calm or Chaos</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 550px;
+            padding: 60px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+        }
+
+        h1 {
+            color: #0984e3;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"],  select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="phonenumber"]:focus select:focus {
+            border-color: #0984e3;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #0984e3;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #74b9ff;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Create Your Account</h1>
+        <form action="register.php" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="Name">Full Name</label>
+                <input type="text" id="Name" name="Name" placeholder="Enter your full name" required>
+                <div class="error-message" id="nameError"></div>
+            </div>
+        
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+                <div class="error-message" id="genderError"></div>
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+        
+            <div class="form-group">
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" id="phonenumber" name="phonenumber" placeholder="Your 10-digit phone number" required>
+                <div class="error-message" id="phonenumberError"></div>
+            </div>
+        
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter a password (min 8 characters)" minlength="8" required>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+        
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+        
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        
+
+        <!-- Back to Home Link -->
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+
+    <!-- JavaScript for Client-Side Validation -->
+    <script>
+        function validateForm() {
+            // Clear previous error messages
+            document.getElementById('nameError').innerText = "";
+            document.getElementById('genderError').innerText = "";
+            document.getElementById('emailError').innerText = "";
+            document.getElementById('passwordError').innerText = "";
+            document.getElementById('confirmPasswordError').innerText = "";
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const gender = document.getElementById('gender').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            let isValid = true;
+
+            // Validate full name (at least 2 characters)
+            if (fullName.length < 2) {
+                document.getElementById('nameError').innerText = "Full Name must be at least 2 characters long.";
+                isValid = false;
+            }
+
+            // Validate gender is selected
+            if (gender === "") {
+                document.getElementById('genderError').innerText = "Please select a gender.";
+                isValid = false;
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                document.getElementById('passwordError').innerText = "Password must be at least 8 characters long.";
+                isValid = false;
+            }
+
+            // Validate confirm password matches password
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').innerText = "Passwords do not match.";
+                isValid = false;
+            }
+
+            return isValid; // Only submit if the form is valid
+        }
+    </script>
+
+</body>
+</html>

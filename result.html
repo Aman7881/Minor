@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm or Chaos - Your Stress Level</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Container for the Result */
+        .result-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2d3436;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #0a0d0f;
+        }
+
+        /* Stress Level Display */
+        .stress-level {
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px;
+            
+            
+        
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .normal {
+            background-color: #3dc256;
+            color: #2d3436;
+        }
+
+        .moderate {
+            background-color: orange;
+            color: #2d3436;
+        }
+
+        .high {
+            background-color: rgb(214, 98, 3);
+            color: #f9fdfe;
+        }
+
+        /* Explanation */
+        .explanation {
+            font-size: 18px;
+            color: #060708;
+            margin: 30px 0;
+        }
+
+        /* Recommendations Button */
+        .tips-btn {
+            background-color: #74b9ff;
+            color: white;
+            padding: 15px 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .tips-btn:hover {
+            background-color: #0984e3;
+        }
+
+        /* Retake Quiz Button */
+        .back-btn {
+            background-color: #0984e3;
+            color: white;
+            padding: 12px 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #74b9ff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Result Container -->
+    <div class="result-container">
+        <h1>Your Stress Level</h1>
+
+        <!-- Display the user's score -->
+        <p>You scored: <strong id="score"></strong></p>
+
+        <!-- Stress Level Display -->
+        <!-- This div will dynamically get a class based on the stress level (normal, moderate, high) -->
+        <div id="stressLevel" class="stress-level">
+            <!-- The actual stress level will be inserted dynamically here by JavaScript -->
+        </div>
+
+        <!-- Explanation of what the score means -->
+        <p id="explanation" class="explanation"></p>
+
+        <!-- Button to view stress management tips -->
+        <a href="tips.html" class="tips-btn">View Stress Management Tips</a>
+
+        <!-- Button to go back and retake the quiz -->
+        <button class="back-btn" onclick="window.location.href='quiz.html'">Retake Quiz</button>
+        <p> For more details how this scores visit our <strong>About Section </strong> </p>
+        <button class="back-btn" onclick="window.location.href='about.html'">About </button>
+    </div>
+
+    <!-- JavaScript to Get and Display the Stress Level and Score -->
+    <script>
+        // Get the stress level and score from the URL query parameters (passed from the quiz)
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score'));  // The score that was passed from the quiz
+        const result = urlParams.get('result');  // The stress level (Normal, Moderate, High)
+
+        // Get the elements to display the score and stress level
+        const scoreElement = document.getElementById('score');
+        const stressLevelDiv = document.getElementById('stressLevel');
+        const explanation = document.getElementById('explanation');
+
+        // Display the score
+        scoreElement.innerText = score;
+
+        // Determine which class to add based on the result and provide an explanation
+        if (result === 'Normal') {
+            stressLevelDiv.classList.add('normal');
+            stressLevelDiv.innerText = "Normal Stress";
+            explanation.innerText = "A score of " + score + " indicates that you have low levels of stress. Keep up the good work maintaining a healthy stress level!";
+        } else if (result === 'Moderate') {
+            stressLevelDiv.classList.add('moderate');
+            stressLevelDiv.innerText = "Moderate Stress";
+            explanation.innerText = "A score of " + score + " indicates that you're experiencing a moderate amount of stress. It's important to manage it before it becomes overwhelming.";
+        } else if (result === 'High') {
+            stressLevelDiv.classList.add('high');
+            stressLevelDiv.innerText = "High Stress";
+            explanation.innerText = "A score of " + score + " means you're experiencing high levels of stress. Consider taking immediate steps to manage your stress, such as relaxation techniques or talking to someone.";
+        }
+        
+    </script>
+    
+
+</body>
+</html>

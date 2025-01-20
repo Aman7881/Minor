@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #f0f4f7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background-color: #131713;
+    padding: 10px 0;
+    font-family: cursive;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.center-content {
+    text-align: center;
+    margin-top: 50px;
+    font-family: cursive;
+    font-size: larger;
+}
+
+h1 {
+    font-size: 60px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+body {
+   
+    background-size: cover; /* This makes the image cover the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Makes the body take the full height of the viewport */
+    display: unset;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 40%;
+    height: 0%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgb(135, 182, 202);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: #101211;
+    box-sizing: content-box;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #adb9b0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #101211;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #dfe4ea;
+}
+
+.form-container
+{
+    background-color: rgb(171, 196, 218) ;
+    text-align: center;
+    text-align: justify;
+    background-image: url(img/login.jpg);
+    width: auto;
+    padding: 0%;
+}
+.home-container
+{
+    margin-top: 0%;
+    text-align: justify;
+    margin-left: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    padding-right: 0px;
+}
+h1{
+    text-align: center;
+}
+footer {
+    background-color: #bbb4b4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+footer a:hover {
+    color: #ffdd57;
+}
+.about-container
+{
+    font-family: cursive;
+    font-style: normal;
+    padding-top: 30px;
+    text-align: justify;
+    margin-top: 40px;
+    margin-right: 40px;
+    
+}
+
+ 

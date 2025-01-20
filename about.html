@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Calm or Chaos</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #003366;
+        }
+
+        .about-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .mission-statement {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .team-section {
+            margin-top: 30px;
+        }
+
+        .team-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .team-section p {
+            margin-bottom: 15px;
+        }
+        .PSS-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #0984e3;
+            color: white;
+        }
+        .score-low {
+            background-color: #55efc4;
+            color: #2d3436;
+        }
+
+        .score-moderate {
+            background-color: #ffeaa7;
+            color: #2d3436;
+        }
+
+        .score-high {
+            background-color: #fab1a0;
+            color: #2d3436;
+        }
+
+        /* Additional styling for reverse scoring explanation */
+        .reverse-scoring {
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-left: 5px solid #0984e3;
+            margin: 10px 0;
+        }
+            
+    </style>
+</head>
+
+<body>
+
+    <div class="about-section">
+        <h1>About Calm or Chaos</h1>
+        <p>Calm or Chaos is a dynamic platform designed to help individuals evaluate their stress levels and provide them with personalized tips for managing stress effectively. Through our simple, interactive quiz based on the Perceived Stress Scale (PSS), users can gain insight into their mental well-being and access helpful resources for improving their mental health.</p>
+
+        <h2>Our Mission</h2>
+        <div class="mission-statement">
+            <p>Our mission is to empower individuals to understand and manage their stress levels through interactive tools and accessible resources, fostering a healthier, more balanced lifestyle.
+            </p>
+        </div>
+
+        <h2>How It Works ? </h2>
+        <p>Once registered, users can take a quick 10-question quiz that assesses their stress levels. The questions are designed to measure how often users experience certain stress-related emotions and behaviors. Based on their answers, users receive a score that categorizes their stress as low, moderate, or high. Along with the results, we offer personalized tips to help manage stress and improve mental wellness.
+            Guest users(ones who donot want to register but wants to evaluate stress) can also use this for analysis their stress.  
+
+        </p>
+
+        <h2>Why Mental Health Matters ? </h2>
+        <p>Mental health is a critical component of overall well-being. With the pressures of daily life, stress is something we all experience. But unchecked, it can lead to burnout, anxiety, and physical health issues. Our goal is to provide a tool that helps users not only recognize their stress but also learn strategies to cope with it in a healthy way.</p>
+
+        <div class="team-section">
+            <h2>About the Creator</h2>
+            <p>Calm or Chaos was developed by [Amandeep Kaur, Anchal, Shobha Students of <strong>GNDEC</strong>], a passionate advocate for mental health awareness. Inspired by personal experiences and a desire to make mental health resources more accessible, the platform was created to make stress management easy, intuitive, and effective.
+            </p>
+        </div>
+        <div class="PSS-container">
+          <h1>About the Perceived Stress Scale (PSS)</h1>
+  
+          <p>
+            The test uses the Perceived Stress Scale (PSS). Originally created by Cohen et al (1983),
+           it is a highly recognised psychological tool for measuring stress that's clinically validated and widely used.
+
+          </p>
+  
+          <h2>How the PSS Quiz Works</h2>
+          <p>
+              The PSS quiz consists of a series of 10 questions that ask about your feelings and thoughts over the last month.
+              For each question, you will be asked to choose from one of the following responses:
+          </p>
+          <ul>
+              <li>0 = Never</li>
+              <li>1 = Almost Never</li>
+              <li>2 = Sometimes</li>
+              <li>3 = Fairly Often</li>
+              <li>4 = Very Often</li>
+          </ul>
+  
+          <h2>Understanding Your Score</h2>
+          <p>
+              The total score is calculated by summing your responses to all 10 questions. Higher scores indicate higher levels of perceived stress.
+          </p>
+  
+          <!-- Reverse Scoring Explanation -->
+          <div class="reverse-scoring">
+              <h3>Reverse Scoring for Positively Worded Questions</h3>
+              <p>
+                  Some questions in the PSS quiz are positively worded. For these questions, your responses are "reverse scored" to align with the stress evaluation.
+                  This means that a response of "0" is scored as "4", a response of "1" is scored as "3", and so on.
+                  This adjustment ensures that higher scores always reflect higher stress.
+              </p>
+          </div>
+  
+          <h2>PSS Scoring Interpretation</h2>
+          <p>
+              Based on your total score, you will fall into one of the following categories:
+          </p>
+  
+          <!-- Table to Display Stress Levels Based on Score -->
+          <table>
+              <thead>
+                  <tr>
+                      <th>Score Range</th>
+                      <th>Stress Level</th>
+                      <th>Explanation</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="score-low">
+                      <td>0-13</td>
+                      <td>Low Stress</td>
+                      <td>You are managing stress well and have low levels of perceived stress.</td>
+                  </tr>
+                  <tr class="score-moderate">
+                      <td>14-26</td>
+                      <td>Moderate Stress</td>
+                      <td>You are experiencing moderate stress. Consider incorporating stress management techniques.</td>
+                  </tr>
+                  <tr class="score-high">
+                      <td>27-40</td>
+                      <td>High Stress</td>
+                      <td>You are experiencing high levels of stress. Taking steps to reduce stress is highly recommended.</td>
+                  </tr>
+              </tbody>
+          </table>
+          <p><a href="index.html" class="tips-btn">Back to home</a> </p> 
+      </div>
+    </div>
+ 
+   
+
+</body>
+</html>

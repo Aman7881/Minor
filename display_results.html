@@ -1,0 +1,109 @@
+<?php
+session_start();
+include 'db_connect.php';
+
+// Ensure user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch the latest quiz result for the user, including the date and time
+$query = "SELECT score, stress_level, date_taken FROM quiz_results WHERE user_id = ? ORDER BY date_taken DESC LIMIT 1";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$stmt->bind_result($score, $stress_level, $date_taken);
+$stmt->fetch();
+$stmt->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm or Chaos - Your Stress Level</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .result-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 { color: #2d3436; font-size: 36px; margin-bottom: 20px; }
+        p { font-size: 18px; margin-bottom: 20px; color: #0a0d0f; }
+
+        .stress-level {
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .normal { background-color: #3dc256; color: #2d3436; }
+        .moderate { background-color: orange; color: #2d3436; }
+        .high { background-color: rgb(214, 98, 3); color: #f9fdfe; }
+
+        .explanation {
+            font-size: 18px;
+            color: #060708;
+            margin: 30px 0;
+        }
+
+        .tips-btn, .back-btn {
+            background-color: #0984e3;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .tips-btn:hover, .back-btn:hover {
+            background-color: #74b9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Your Stress Level</h1>
+
+        <p>You scored: <strong><?php echo htmlspecialchars($score); ?></strong></p>
+        
+        <div class="stress-level <?php echo strtolower($stress_level); ?>">
+            <?php echo htmlspecialchars($stress_level); ?>
+        </div>
+
+        <p class="explanation"><?php echo htmlspecialchars($explanation); ?></p>
+
+        <p>Date Taken: <strong><?php echo htmlspecialchars($date_taken); ?></strong></p>
+
+        <a href="health_tips.php" class="tips-btn">View Stress Management Tips</a>
+        <button class="back-btn" onclick="window.location.href='quiz_results.html'">Retake Quiz</button>
+        <a href="about.html" class="back-btn">About</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm or Chaos - Home</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2d3436;
+            padding: 20px ;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #74b9ff;
+        }
+
+        nav h1 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: linear-gradient(to right, #f2f1f4, #908ba2);
+            color: rgb(14, 10, 10);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-section .cta-btn {
+            background-color: #ff7675;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-section .cta-btn:hover {
+            background-color: #e17055;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+            background-image: linear-gradient(to right, #f2f1f4, #908ba2);
+            
+         }
+
+        .benefits-section h3 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2d3436;
+            font-weight: 700;
+        }
+
+        .benefits-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .benefit-item {
+            flex: 1 1 calc(50% - 40px);
+            margin-bottom: 40px;
+            padding: 10px;
+            background-color: #f1f2f6;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-item h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0c0c0c;
+        }
+
+        .benefit-item p {
+            font-size: 18px;
+            color: #0b0c0c;
+        }
+
+        /* FAQ Link */
+        .faq-link {
+            background-color: #7058d1;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            width: 250px;
+        }
+
+        .faq-link:hover {
+            background-color: #74b9ff;
+        }
+
+       
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav h1 {
+                font-size: 26px;
+            }
+
+            .hero-section h2 {
+                font-size: 36px;
+            }
+
+            .hero-section p {
+                font-size: 18px;
+            }
+
+            .benefits-section h3 {
+                font-size: 30px;
+            }
+
+            .benefit-item {
+                flex: 1 1 100%;
+            }
+
+            .faq-link {
+                font-size: 16px;
+                padding: 12px 25px;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="nav-center">
+            <h1>Calm or Chaos</h1>
+        </div>
+        <div class="nav-right">
+            <a href="about.html">About</a>
+            <a href="register.html">Login / Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2><u><strong>Take Control of Your Mental Health</strong></u></h2>
+        <p>At Calm or Chaos, we help you understand and manage your stress levels through a personalized, science-backed quiz. Get insights into your mental well-being and take the first step towards a healthier, stress-free life.</p>
+        <a href="quiz.html" class="cta-btn">Start the Quiz</a>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <h3><u><strong>Why Choose Calm or Chaos?</strong></u></h3>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <h4>Scientifically Proven Methods</h4>
+                <p>Our quiz uses the Perceived Stress Scale (PSS), a highly trusted tool in mental health research, to assess your stress levels accurately.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Personalized Tips and Guidance</h4>
+                <p>Based on your quiz results, receive custom tips and strategies to manage and reduce stress effectively in your daily life.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Track Your Progress</h4>
+                <p>Our platform allows you to retake the quiz at any time, so you can track improvements in your mental well-being and adapt as needed.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Safe and Confidential</h4>
+                <p>Your privacy is important to us. All your quiz data is confidential and protected, giving you peace of mind as you explore your mental health.</p>
+            </div>
+        </div>
+        <a href="faq.html" class="faq-link">Learn More in FAQs</a>
+    </section>
+
+   
+</body>
+</html>
